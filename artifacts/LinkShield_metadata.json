@@ -1,0 +1,155 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "url",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "linkId",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "fee",
+						"type": "uint256"
+					}
+				],
+				"name": "addLink",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "comission",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "linkId",
+						"type": "string"
+					}
+				],
+				"name": "getLink",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "url",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "fee",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct LinkShield.Link",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "hasAccess",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "linkId",
+						"type": "string"
+					}
+				],
+				"name": "payLink",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/LinkShield.sol": "LinkShield"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/LinkShield.sol": {
+			"keccak256": "0x16bb8517b413377135ac26720144b21d35b9323b1abd72bbe3540ece3496cb36",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://645aac2f306738f1ef72e76b59f3ab4797b53684c1b6a77b4e9f01560ba943f4",
+				"dweb:/ipfs/Qmc3v7A5n1FyYMCK9dU8srLr3QhJif4yvxPQ3ab8pUKdY6"
+			]
+		}
+	},
+	"version": 1
+}
