@@ -11,6 +11,7 @@ contract LinkShield {
         string url;
         address owner;
         uint256 fee; // address type represent the wallet address that equivalent a user account in blockchain
+        uint256 timestamp;
     }
 
     uint256 public comission = 1;
@@ -29,17 +30,19 @@ contract LinkShield {
         link.url = url;
         link.fee = fee;
         link.owner = msg.sender;
+        link.timestamp = block.timestamp;
 
         links[linkId] = link;
 
         hasAccess[linkId][msg.sender] = true;
     }
+
     function getLink(string calldata linkId) public view returns (Link memory) {
         Link memory link = links[linkId];
         if(link.fee == 0) return link;
         if(hasAccess[linkId][msg.sender] == false)
-            link.url = ""; // if the user is not owner, he will not see the url  
-
+            link.url = ""; // if the user is not owner or paid link, he will not see the url  
+        
         return link;
     }
 
@@ -52,6 +55,22 @@ contract LinkShield {
 
         hasAccess[linkId][msg.sender] = true;
         payable(link.owner).transfer(msg.value - comission);
-    } 
+    }
+
+    function editComission(string calldata linkId, uint256 newFee) public {
+        Link storage link = links[linkId];
+        require(link.owner != address(0), "Link not found");
+        require(link.owner == msg.sender, "You don't permission for this action");
+        
+        link.fee = newFee;
+    }
+
+    function deleteLink (string calldata linkId) public {
+        Link memory link = links[linkId];
+        require(link.owner != address(0), "Link not found");
+        require(link.owner == msg.sender, "You don't permission for this action");
+        
+        delete links[linkId];
+    }
 
 }
