@@ -6,6 +6,11 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "string",
@@ -26,6 +31,19 @@
 				"name": "addLink",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "admin",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -149,6 +167,13 @@
 				"outputs": [],
 				"stateMutability": "payable",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -179,11 +204,11 @@
 	},
 	"sources": {
 		"contracts/LinkShield.sol": {
-			"keccak256": "0xeabb0f8eff53a933a15d5f69e0654b43ea3c41525fb113b5672c65ca50496f28",
+			"keccak256": "0x4dc9d2cc3ab95231fc4836528529c3de89aaba260146dea44551e6014d1d7db0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2a9060fe0f663fcc7456b815f23d7909ea81c9a030b2e2469cc1ee8b193eb7a2",
-				"dweb:/ipfs/QmNML5Wn3xTvLcXNieTNst88HqzFgqoSH3JXv79QLngmK6"
+				"bzz-raw://3f08d792a69c4b0e809b377db7402b906d78a511f47eabc96cd1ff26e54dd0f2",
+				"dweb:/ipfs/QmRg48HuVDTcUyb3nqocBiYqtREX4VhZLDVgxAmzdEKeDh"
 			]
 		}
 	},

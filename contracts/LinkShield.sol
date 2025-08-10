@@ -14,10 +14,16 @@ contract LinkShield {
         uint256 timestamp;
     }
 
-    uint256 public comission = 1;
+    uint256 public comission = 1; // define the transfered comission for contract owner wallet address;
+    address public immutable admin; // immutable variables don't changes your value. It's like const variables in JS;
+
+    constructor() // constructor is a function executed after deploy;
+    {
+        admin = msg.sender;
+    }
 
     mapping(string => Link) private links; // mapping is useful when want search by id
-    mapping(string => mapping (address => bool)) public  hasAccess;
+    mapping(string => mapping (address => bool)) public hasAccess; // used for mapping all links and address that have access; 
     
     //abc => luiz => true
     //def => luiz => false
@@ -71,6 +77,12 @@ contract LinkShield {
         require(link.owner == msg.sender, "You don't permission for this action");
         
         delete links[linkId];
+    }
+
+    function withdraw() public {
+        require(msg.sender == admin, "You don't permission for this action");
+        uint256 amount = address(this).balance; // receive balance accumulated in the contract
+        payable(admin).transfer(amount); // the contract balance transfer to admin wallet address     
     }
 
 }
