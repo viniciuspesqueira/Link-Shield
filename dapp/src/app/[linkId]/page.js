@@ -1,4 +1,4 @@
-"use-client";
+"use client";
 
 import {useState, useEffect} from "react";
 import { useParams } from "next/navigation";
@@ -45,11 +45,11 @@ export default function Home() {
               <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-3">Protected Link</h1>
               <p className="lead">This link is protected by Link Shield</p>
               <hr />
-              <p>For access the original content, connect your wallet below and confirm the payment of fee of 10 wei</p>
+              <p>For access the original content, connect your wallet below and confirm the payment of fee of wei</p>
 
               <div className="row mb-3">
                 <div className="col-6">
-                  <button type="button" className="btn btn-primary w-100 h-100">
+                  <button type="button" className="btn btn-primary w-100 h-100" onClick={btnAccessClick}>
                     <img src="/metamask.svg" width={32} className="me-2"></img>
                     Pay and access link
                   </button>                 

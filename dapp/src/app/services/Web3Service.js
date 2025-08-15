@@ -1,7 +1,7 @@
 import Web3 from "web3";
 import ABI from "./ABI.json";
 
-const CONTRACT_ADDRESS = "0x8dE1e52B29D5015556Cb29D000075562eEB18a1A"
+const CONTRACT_ADDRESS = "0x4F43935eE34c71997f8beaed17b8F402B79B1752"
 
 export async function connectContract() {
     if (!window.ethereum) throw new Error("Without Metamask installed");
