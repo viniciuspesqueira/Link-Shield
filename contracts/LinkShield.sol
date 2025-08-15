@@ -12,6 +12,7 @@ contract LinkShield {
         address owner;
         uint256 fee; // address type represent the wallet address that equivalent a user account in blockchain
         uint256 timestamp;
+        uint256 payments;
     }
 
     uint256 public comission = 1; // define the transfered comission for contract owner wallet address;
@@ -58,6 +59,8 @@ contract LinkShield {
         require(link.owner != address(0), "Link not found");
         require((hasAccess[linkId][msg.sender] == false), "You alredy has access");
         require(msg.value >= link.fee, "Insuficient payment");
+
+        links[linkId].payments++;
 
         hasAccess[linkId][msg.sender] = true;
         payable(link.owner).transfer(msg.value - comission);
